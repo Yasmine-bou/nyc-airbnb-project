@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is Airbnb Still a Sharing Economy?</title>
+  <style>
+    :root {
+      --bg: #0f1220;
+      --bg-soft: #171b2e;
+      --card: rgba(255,255,255,0.06);
+      --text: #f4f6fb;
+      --muted: #c7cede;
+      --accent: #f4b63f;
+      --accent-2: #7aa2ff;
+      --border: rgba(255,255,255,0.12);
+      --maxw: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(rgba(10,12,20,0.76), rgba(10,12,20,0.92)),
+                  url("images/nyc_background.jpg") center/cover fixed no-repeat;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    .hero {
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 16px;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    section {
+      margin-top: 36px;
+    }
+
+    .section-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px 22px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 0 0 12px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    @media (min-width: 900px) {
+      .grid-2 {
+        grid-template-columns: 1.05fr 0.95fr;
+      }
+    }
+
+    .figure {
+      margin-top: 18px;
+    }
+
+    .figure img,
+    .figure iframe {
+      width: 100%;
+      border: 0;
+      border-radius: 16px;
+      background: #fff;
+      display: block;
+    }
+
+    .figure iframe {
+      min-height: 560px;
+    }
+
+    .caption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .quote-box {
+      border-left: 4px solid var(--accent);
+      padding-left: 16px;
+      margin-top: 12px;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    @media (min-width: 700px) {
+      .mini-stats {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .stat .num {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .stat .lab {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .footer {
+      margin-top: 36px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 24px 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Social Data Analysis · NYC Airbnb Project</div>
+      <h1>Is Airbnb still a <span class="highlight">sharing economy</span>?</h1>
+      <p class="subtitle">
+        Airbnb began as a way to share spare space. In New York City today, the picture looks more complicated:
+        many small hosts still exist, but a smaller group behaves much more like a professional rental business.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#story">Read the story</a>
+        <a class="btn btn-secondary" href="#explore">Explore the maps</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="story">
+
+    <section class="section-card">
+      <h2>Why this matters</h2>
+      <p>
+        Airbnb was originally built around the idea of home-sharing. But in a city like New York,
+        that idea may coexist with something very different: hosts managing multiple listings,
+        entire apartments offered as full-time rentals, and spatial concentration in high-demand areas.
+      </p>
+      <div class="quote-box">
+        Our central question is simple: <strong>does Airbnb in NYC still look like sharing, or does it increasingly look like business?</strong>
+      </div>
+
+      <div class="mini-stats">
+        <div class="stat">
+          <div class="num">36,418</div>
+          <div class="lab">Listings</div>
+        </div>
+        <div class="stat">
+          <div class="num">21,448</div>
+          <div class="lab">Unique hosts</div>
+        </div>
+        <div class="stat">
+          <div class="num">85</div>
+          <div class="lab">Variables</div>
+        </div>
+        <div class="stat">
+          <div class="num">Feb 2026</div>
+          <div class="lab">Snapshot date</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Who really owns Airbnb listings?</h2>
+      <p>
+        At first glance, the platform looks highly decentralized. In fact, about <strong>84%</strong> of hosts manage only one listing.
+        But the long tail matters: a smaller group controls many listings, and some hosts operate on a much larger scale.
+      </p>
+      <p>
+        This means Airbnb in NYC is not purely a platform of casual hosts. It also includes actors whose behavior looks much more structured and business-like.
+      </p>
+
+      <div class="figure">
+        <img src="images/host_histogram.png" alt="Histogram showing number of listings per host in NYC">
+        <div class="caption">
+          <strong>Figure 1.</strong> Most hosts control only one listing, but the distribution is highly skewed.
+          A small minority of hosts controls multiple properties, suggesting that part of Airbnb activity is professionalized rather than purely casual.
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>What are people actually renting?</h2>
+      <p>
+        Room type adds an important twist. Private rooms are common, which means the original idea of “sharing a spare room” has not disappeared.
+        At the same time, entire homes and apartments also make up a very large share of listings.
+      </p>
+      <p>
+        So the platform still contains home-sharing, but it also supports full-unit rentals that look much closer to a hotel or investment property model.
+      </p>
+
+      <div class="grid-2">
+        <div class="figure">
+          <img src="images/room_types.png" alt="Room type distribution in NYC Airbnb">
+          <div class="caption">
+            <strong>Figure 2.</strong> Private rooms are slightly more common than entire homes, while shared rooms are almost absent.
+            This shows that Airbnb still includes home-sharing, but not exclusively.
+          </div>
+        </div>
+
+        <div class="figure">
+          <img src="images/room_types_by_host.png" alt="Room type distribution by host category">
+          <div class="caption">
+            <strong>Figure 3.</strong> Looking within host categories reveals a clearer pattern:
+            larger hosts are more associated with entire-home rentals, which pushes them further away from the platform’s original sharing-economy identity.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Used casually or run like a business?</h2>
+      <p>
+        Availability provides one of the clearest behavioral signals. Some listings are available very little during the year,
+        which is consistent with occasional hosting. Others are available almost all year, which looks much more like a standing rental operation.
+      </p>
+      <p>
+        This difference becomes stronger when comparing host categories: the more listings a host controls, the more continuously available those listings tend to be.
+      </p>
+
+      <div class="grid-2">
+        <div class="figure">
+          <img src="images/availability_hist.png" alt="Histogram of Airbnb availability in NYC">
+          <div class="caption">
+            <strong>Figure 4.</strong> The bimodal availability pattern suggests two different uses of the platform:
+            occasional hosting and near-permanent rental activity.
+          </div>
+        </div>
+
+        <div class="figure">
+          <img src="images/availability_by_host.png" alt="Availability by host category">
+          <div class="caption">
+            <strong>Figure 5.</strong> Hosts with more listings tend to keep them available for much larger parts of the year.
+            This is a strong sign that large hosts behave less like casual sharers and more like continuous rental operators.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Where is Airbnb concentrated?</h2>
+      <p>
+        Geography matters. Airbnb is not spread evenly across New York City: Manhattan and Brooklyn dominate in sheer volume.
+        But the geography of professionalization is even more telling.
+      </p>
+      <p>
+        Manhattan stands out not only because it has many listings, but because it also has a much larger share of hosts with five or more properties.
+        That suggests the most central and valuable parts of the city are also the most professionalized.
+      </p>
+
+      <div class="grid-2">
+        <div class="figure">
+          <img src="images/boroughs.png" alt="Number of listings by borough">
+          <div class="caption">
+            <strong>Figure 6.</strong> Airbnb is highly concentrated in Manhattan and Brooklyn, meaning its effects are likely strongest there rather than evenly distributed across the city.
+          </div>
+        </div>
+
+        <div class="figure">
+          <img src="images/borough_host_share.png" alt="Host category composition by borough">
+          <div class="caption">
+            <strong>Figure 7.</strong> Manhattan has a particularly high share of large multi-listing hosts, indicating that Airbnb is not only geographically concentrated, but also unevenly professionalized.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card" id="explore">
+      <h2>Explore the spatial patterns</h2>
+      <p>
+        The interactive figures below allow a more reader-driven view of the data.
+        They follow the course idea of <em>overview first, zoom and filter, details on demand</em>.
+      </p>
+
+      <div class="figure">
+        <iframe src="visualizations/airbnb_map.html" title="Interactive map of Airbnb listings by host category"></iframe>
+        <div class="caption">
+          <strong>Figure 8.</strong> An interactive Plotly map of Airbnb listings by host category.
+          Zooming in shows how listings cluster in Manhattan and Brooklyn, while hovering reveals room type, availability, and borough.
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="figure">
+        <iframe src="visualizations/large_hosts_heatmap.html" title="Folium heatmap of large hosts"></iframe>
+        <div class="caption">
+          <strong>Figure 9.</strong> A Folium heatmap of listings operated by hosts with five or more properties.
+          The strongest clusters appear in central, high-demand areas, suggesting that the platform’s most business-like activity is also geographically strategic.
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Final takeaway</h2>
+      <p>
+        Airbnb in New York City is best understood as a <strong>hybrid system</strong>.
+      </p>
+      <p>
+        Most hosts are still small, and private rooms remain common, so the sharing economy has not disappeared.
+        But a smaller group of multi-listing hosts plays a disproportionately important role:
+        they are more likely to operate entire homes, keep listings available year-round, and concentrate in central parts of the city.
+      </p>
+      <p>
+        In short: <span class="highlight">Airbnb in NYC is no longer just sharing. It is sharing and business at the same time.</span>
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>Behind the scenes</h2>
+      <p>
+        The full explainer notebook contains the data cleaning, exploratory analysis, methodological choices,
+        and additional interpretation behind this project.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="notebooks/02_analysis.ipynb">Open the explainer notebook</a>
+      </p>
+    </section>
+
+    <div class="footer">
+      Built for the DTU course <em>Social Data Analysis</em> · Project by Yassine El Harti  
+    </div>
+  </main>
+</body>
+</html>
