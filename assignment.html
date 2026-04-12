@@ -29,7 +29,7 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: linear-gradient(rgba(10,12,20,0.76), rgba(10,12,20,0.92)),
-                  url("images/nyc_background.jpg") center/cover fixed no-repeat;
+                  url("figures/nyc_background.jpg") center/cover fixed no-repeat;
       color: var(--text);
       line-height: 1.6;
     }
@@ -237,7 +237,7 @@
       <h1>Is Airbnb still a <span class="highlight">sharing economy</span>?</h1>
       <p class="subtitle">
         Airbnb began as a way to share spare space. In New York City today, the picture looks more complicated:
-        many small hosts still exist, but a smaller group behaves much more like a professional rental business.
+        many small hosts still exist, but a smaller group behaves much more like a professional rental business — especially in central parts of the city.
       </p>
       <div class="hero-buttons">
         <a class="btn btn-primary" href="#story">Read the story</a>
@@ -290,7 +290,7 @@
       </p>
 
       <div class="figure">
-        <img src="images/host_histogram.png" alt="Histogram showing number of listings per host in NYC">
+        <img src="figures/host_histogram.png" alt="Histogram showing number of listings per host in NYC">
         <div class="caption">
           <strong>Figure 1.</strong> Most hosts control only one listing, but the distribution is highly skewed.
           A small minority of hosts controls multiple properties, suggesting that part of Airbnb activity is professionalized rather than purely casual.
@@ -310,7 +310,7 @@
 
       <div class="grid-2">
         <div class="figure">
-          <img src="images/room_types.png" alt="Room type distribution in NYC Airbnb">
+          <img src="figures/room_types.png" alt="Room type distribution in NYC Airbnb">
           <div class="caption">
             <strong>Figure 2.</strong> Private rooms are slightly more common than entire homes, while shared rooms are almost absent.
             This shows that Airbnb still includes home-sharing, but not exclusively.
@@ -318,7 +318,7 @@
         </div>
 
         <div class="figure">
-          <img src="images/room_types_by_host.png" alt="Room type distribution by host category">
+          <img src="figures/room_types_by_host.png" alt="Room type distribution by host category">
           <div class="caption">
             <strong>Figure 3.</strong> Looking within host categories reveals a clearer pattern:
             larger hosts are more associated with entire-home rentals, which pushes them further away from the platform’s original sharing-economy identity.
@@ -339,7 +339,7 @@
 
       <div class="grid-2">
         <div class="figure">
-          <img src="images/availability_hist.png" alt="Histogram of Airbnb availability in NYC">
+          <img src="figures/availability_hist.png" alt="Histogram of Airbnb availability in NYC">
           <div class="caption">
             <strong>Figure 4.</strong> The bimodal availability pattern suggests two different uses of the platform:
             occasional hosting and near-permanent rental activity.
@@ -347,7 +347,7 @@
         </div>
 
         <div class="figure">
-          <img src="images/availability_by_host.png" alt="Availability by host category">
+          <img src="figures/availability_by_host.png" alt="Availability by host category">
           <div class="caption">
             <strong>Figure 5.</strong> Hosts with more listings tend to keep them available for much larger parts of the year.
             This is a strong sign that large hosts behave less like casual sharers and more like continuous rental operators.
@@ -369,14 +369,14 @@
 
       <div class="grid-2">
         <div class="figure">
-          <img src="images/boroughs.png" alt="Number of listings by borough">
+          <img src="figures/boroughs.png" alt="Number of listings by borough">
           <div class="caption">
             <strong>Figure 6.</strong> Airbnb is highly concentrated in Manhattan and Brooklyn, meaning its effects are likely strongest there rather than evenly distributed across the city.
           </div>
         </div>
 
         <div class="figure">
-          <img src="images/borough_host_share.png" alt="Host category composition by borough">
+          <img src="figures/borough_host_share.png" alt="Host category composition by borough">
           <div class="caption">
             <strong>Figure 7.</strong> Manhattan has a particularly high share of large multi-listing hosts, indicating that Airbnb is not only geographically concentrated, but also unevenly professionalized.
           </div>
@@ -392,7 +392,7 @@
       </p>
 
       <div class="figure">
-        <iframe src="visualizations/airbnb_map.html" title="Interactive map of Airbnb listings by host category"></iframe>
+        <iframe src="figures/airbnb_map.html" title="Interactive map of Airbnb listings by host category"></iframe>
         <div class="caption">
           <strong>Figure 8.</strong> An interactive Plotly map of Airbnb listings by host category.
           Zooming in shows how listings cluster in Manhattan and Brooklyn, while hovering reveals room type, availability, and borough.
@@ -402,7 +402,7 @@
       <div class="divider"></div>
 
       <div class="figure">
-        <iframe src="visualizations/large_hosts_heatmap.html" title="Folium heatmap of large hosts"></iframe>
+        <iframe src="figures/large_hosts_heatmap.html" title="Folium heatmap of large hosts"></iframe>
         <div class="caption">
           <strong>Figure 9.</strong> A Folium heatmap of listings operated by hosts with five or more properties.
           The strongest clusters appear in central, high-demand areas, suggesting that the platform’s most business-like activity is also geographically strategic.
@@ -432,7 +432,7 @@
         and additional interpretation behind this project.
       </p>
       <p>
-        <a class="btn btn-primary" href="notebooks/02_analysis.ipynb">Open the explainer notebook</a>
+        <a class="btn btn-primary" href="notebooks/02_analysis.ipynb" target="_blank">Open the explainer notebook</a>
       </p>
     </section>
 
