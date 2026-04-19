@@ -228,6 +228,35 @@
       background: var(--border);
       margin: 24px 0;
     }
+
+    .source-box {
+      background: rgba(255,255,255,0.04);
+      border-left: 4px solid var(--accent-2);
+      padding: 16px 18px;
+      margin-top: 18px;
+      border-radius: 14px;
+    }
+
+    .story-guide {
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .references ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .references li {
+      margin-bottom: 10px;
+    }
+
+    .references a {
+      color: var(--accent);
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -238,8 +267,6 @@
       <p class="subtitle">
         Airbnb didn’t start as a global platform — it started with three guys in San Francisco who couldn’t pay their rent.
         In 2007, they decided to put a few air mattresses in their living room and rent them out to strangers attending a design conference. They called it “Air Bed & Breakfast”.
-        (At the time, even their first guests were skeptical — but they still paid $80 per night.)
-        What began as a simple, slightly improvised idea quickly turned into a global phenomenon: millions of listings, billions in revenue, and a redefinition of how people travel.
         But somewhere along the way, something changed.
         In cities like New York, Airbnb is no longer just about renting out a spare room for a few nights. Some hosts now manage multiple properties, operate year-round, and behave more like professional landlords than casual sharers.
         So the question is no longer how Airbnb works — but what it has become.
@@ -259,9 +286,10 @@
       <p>
         Airbnb was originally built around the idea of home-sharing. But in a city like New York,
         that idea may coexist with something very different: hosts managing multiple listings,
-        entire apartments offered as full-time rentals, and spatial concentration in high-demand areas.
-        This matters because Airbnb doesn’t just reflect cities — it reshapes them.
+        entire apartments offered as near full-time rentals, and spatial concentration in central areas.
+        This matters because Airbnb does not just reflect cities — it can also reshape how housing is used.
       </p>
+
       <div class="quote-box">
         Our central question is simple: <strong>does Airbnb in NYC still look like sharing, or does it increasingly look like business?</strong>
       </div>
@@ -284,24 +312,37 @@
           <div class="lab">Snapshot date</div>
         </div>
       </div>
+
+      <div class="source-box">
+        <p>
+          This analysis uses a February 2026 snapshot of New York City listings from Inside Airbnb, a project that collects publicly available Airbnb listing information for research and public discussion.
+          It is a cross-sectional dataset, meaning it shows the platform at one point in time rather than over many years.
+        </p>
+        <p>
+          To answer our question, we move from <strong>market structure</strong> (who owns listings),
+          to <strong>listing type</strong> (what is being rented), to <strong>behavior</strong> (how available listings are),
+          and finally to <strong>space</strong> (where these patterns are concentrated in the city).
+        </p>
+      </div>
+
+      <p class="story-guide">
+        In other words, the goal is not just to describe Airbnb, but to test whether the patterns we see are more consistent with casual home-sharing or with a more business-driven platform.
+      </p>
     </section>
 
     <section class="section-card">
       <h2>Who really owns Airbnb listings?</h2>
       <p>
-        At first glance, the platform looks highly decentralized. In fact, about <strong>84%</strong> of hosts manage only one listing.
-        But the long tail matters: a smaller group controls many listings, and some hosts operate on a much larger scale.
-      </p>
-      <p>
-        This means Airbnb in NYC is not purely a platform of casual hosts. It also includes actors whose behavior looks much more structured and business-like.
-        In other words, while Airbnb looks decentralized, a small group of hosts holds a disproportionate share of the market.
+        A first way to test the “sharing economy” idea is to look at host concentration.
+        If Airbnb mainly consists of casual hosts, most people should manage just one listing.
+        If a smaller group controls many properties, the platform starts to look more like a market with professional operators.
       </p>
 
       <div class="figure">
         <img src="figures/host_histogram.png" alt="Histogram showing number of listings per host in NYC">
         <div class="caption">
-          <strong>Figure 1.</strong> Key insight: The distribution is extremely skewed. Most hosts control only one listing, but the distribution is highly skewed.
-          A small minority of hosts controls multiple properties, suggesting that part of Airbnb activity is professionalized rather than purely casual.
+          <strong>Figure 1.</strong> Distribution of the number of listings per host in NYC.
+          <strong>Takeaway:</strong> Most hosts manage only one listing, but a small minority controls many properties, suggesting that part of Airbnb activity is more professionalized than purely casual.
         </div>
       </div>
     </section>
@@ -309,28 +350,24 @@
     <section class="section-card">
       <h2>What are people actually renting?</h2>
       <p>
-        Room type adds an important twist. Private rooms are common, which means the original idea of “sharing a spare room” has not disappeared.
-        At the same time, entire homes and apartments also make up a very large share of listings.
-      </p>
-      <p>
-        So the platform still contains home-sharing, but it also supports full-unit rentals that look much closer to a hotel or investment property model.
-        This creates a tension: Airbnb still enables home-sharing, but increasingly supports full-time rental businesses.
+        Room type gives a second clue. If Airbnb mostly reflects classic home-sharing, we would expect many private rooms.
+        If a large part of the market consists of entire homes or apartments, that points toward a model that is closer to full-unit rental activity.
       </p>
 
       <div class="grid-2">
         <div class="figure">
           <img src="figures/room_types.png" alt="Room type distribution in NYC Airbnb">
           <div class="caption">
-            <strong>Figure 2.</strong> Private rooms are slightly more common than entire homes, while shared rooms are almost absent.
-            This shows that Airbnb still includes home-sharing, but not exclusively.
+            <strong>Figure 2.</strong> Distribution of Airbnb room types in NYC.
+            <strong>Takeaway:</strong> Private rooms remain common, but the large presence of entire-home rentals shows that Airbnb goes beyond the original idea of simply sharing spare space.
           </div>
         </div>
 
         <div class="figure">
           <img src="figures/room_types_by_host.png" alt="Room type distribution by host category">
           <div class="caption">
-            <strong>Figure 3.</strong> Looking within host categories reveals a clearer pattern:
-            larger hosts are more associated with entire-home rentals, which pushes them further away from the platform’s original sharing-economy identity.
+            <strong>Figure 3.</strong> Room type distribution by host category.
+            <strong>Takeaway:</strong> Larger hosts are more associated with entire-home rentals, making their activity look more commercial than casual.
           </div>
         </div>
       </div>
@@ -339,27 +376,25 @@
     <section class="section-card">
       <h2>Used casually or run like a business?</h2>
       <p>
-        Availability provides one of the clearest behavioral signals. Some listings are available very little during the year,
-        which is consistent with occasional hosting. Others are available almost all year, which looks much more like a standing rental operation.
-      </p>
-      <p>
-        The difference is striking: the more listings a host owns, the more continuously those properties are available.
+        Availability provides one of the clearest behavioral signals in the dataset.
+        Listings available only a small part of the year are more consistent with occasional hosting,
+        while listings available most of the year look more like a continuous rental operation.
       </p>
 
       <div class="grid-2">
         <div class="figure">
           <img src="figures/availability_hist.png" alt="Histogram of Airbnb availability in NYC">
           <div class="caption">
-            <strong>Figure 4.</strong> The bimodal availability pattern suggests two different uses of the platform:
-            occasional hosting and near-permanent rental activity.
+            <strong>Figure 4.</strong> Distribution of listing availability over the next 365 days.
+            <strong>Takeaway:</strong> The bimodal pattern suggests two distinct uses of Airbnb: occasional hosting and near year-round rental activity.
           </div>
         </div>
 
         <div class="figure">
           <img src="figures/availability_by_host.png" alt="Availability by host category">
           <div class="caption">
-            <strong>Figure 5.</strong> Hosts with more listings tend to keep them available for much larger parts of the year.
-            This is a strong sign that large hosts behave less like casual sharers and more like continuous rental operators.
+            <strong>Figure 5.</strong> Availability by host category.
+            <strong>Takeaway:</strong> Hosts with more listings tend to keep them available for larger parts of the year, a pattern that is consistent with more business-like use of the platform.
           </div>
         </div>
       </div>
@@ -368,27 +403,24 @@
     <section class="section-card">
       <h2>Where is Airbnb concentrated?</h2>
       <p>
-        Geography matters. Airbnb is not spread evenly across New York City: Manhattan and Brooklyn dominate in sheer volume.
-        But the geography of professionalization is even more telling.
-      </p>
-      <p>
-        Manhattan stands out not only because it has many listings, but because it also has a much larger share of hosts with five or more properties.
-        That suggests the most central and valuable parts of the city are also the most professionalized.
-        This means that Airbnb’s most commercial activity is not random — it is concentrated in the most valuable parts of the city.
+        Geography adds the final piece. Airbnb is not spread evenly across New York City:
+        Manhattan and Brooklyn dominate in sheer volume, and the concentration of larger hosts is not uniform either.
       </p>
 
       <div class="grid-2">
         <div class="figure">
           <img src="figures/boroughs.png" alt="Number of listings by borough">
           <div class="caption">
-            <strong>Figure 6.</strong> Airbnb is highly concentrated in Manhattan and Brooklyn, meaning its effects are likely strongest there rather than evenly distributed across the city.
+            <strong>Figure 6.</strong> Number of Airbnb listings by borough.
+            <strong>Takeaway:</strong> Airbnb activity is heavily concentrated in Manhattan and Brooklyn, so the platform’s effects are likely strongest there.
           </div>
         </div>
 
         <div class="figure">
           <img src="figures/borough_host_share.png" alt="Host category composition by borough">
           <div class="caption">
-            <strong>Figure 7.</strong> Manhattan has a particularly high share of large multi-listing hosts, indicating that Airbnb is not only geographically concentrated, but also unevenly professionalized.
+            <strong>Figure 7.</strong> Host category composition by borough.
+            <strong>Takeaway:</strong> Manhattan has a larger share of multi-listing hosts, suggesting that the platform is not only geographically concentrated but also unevenly professionalized.
           </div>
         </div>
       </div>
@@ -399,14 +431,14 @@
       <p>
         The interactive figures below allow a more reader-driven view of the data.
         They follow the course idea of <em>overview first, zoom and filter, details on demand</em>.
-        Try zooming into Manhattan and Brooklyn — notice how large multi-listing hosts cluster in central neighborhoods.
+        Zooming into Manhattan and Brooklyn makes it easier to see where listings and larger hosts cluster.
       </p>
 
       <div class="figure">
         <iframe src="figures/airbnb_map.html" title="Interactive map of Airbnb listings by host category"></iframe>
         <div class="caption">
-          <strong>Figure 8.</strong> An interactive Plotly map of Airbnb listings by host category.
-          Zooming in shows how listings cluster in Manhattan and Brooklyn, while hovering reveals room type, availability, and borough.
+          <strong>Figure 8.</strong> Interactive map of Airbnb listings by host category.
+          <strong>Takeaway:</strong> Listings are spatially concentrated, and the map makes it possible to inspect host size, room type, availability, and borough at the neighborhood level.
         </div>
       </div>
 
@@ -415,11 +447,22 @@
       <div class="figure">
         <iframe src="figures/large_hosts_heatmap.html" title="Folium heatmap of large hosts"></iframe>
         <div class="caption">
-          <strong>Figure 9.</strong> A Folium heatmap of listings operated by hosts with five or more properties.
-          The strongest clusters appear in central, high-demand areas, suggesting that the platform’s most business-like activity is also geographically strategic.
-          The hotspots align with high-demand, tourist-heavy areas, reinforcing the idea of strategic, business-driven behavior.
+          <strong>Figure 9.</strong> Heatmap of listings operated by hosts with five or more properties.
+          <strong>Takeaway:</strong> Large-host activity is concentrated in central areas, which is consistent with the idea that the platform’s more commercial-looking segment is also spatially strategic.
         </div>
       </div>
+    </section>
+
+    <section class="section-card">
+      <h2>What this analysis can and cannot show</h2>
+      <p>
+        These patterns do not directly prove that a host is a company, investor, or illegal operator.
+        Rather, they show behavioral signals that are more or less consistent with casual home-sharing versus professional short-term rental activity.
+      </p>
+      <p>
+        In particular, availability does not mean actual occupancy, and a single snapshot cannot show how listings evolved over time.
+        For that reason, the figures are best interpreted as evidence of a broader trend toward commercialization rather than definitive proof for every individual listing.
+      </p>
     </section>
 
     <section class="section-card">
@@ -428,20 +471,38 @@
         Airbnb in New York City is best understood as a <strong>hybrid system</strong>.
       </p>
       <p>
-        Most hosts are still small, and private rooms remain common, so the sharing economy has not disappeared.
+        Many hosts still look like occasional sharers, and private rooms remain an important part of the platform.
         But a smaller group of multi-listing hosts plays a disproportionately important role:
-        they are more likely to operate entire homes, keep listings available year-round, and concentrate in central parts of the city.
+        they are more likely to operate entire homes, keep listings available for much of the year, and concentrate in central parts of the city.
       </p>
       <p>
-        In short: <span class="highlight">Airbnb in NYC is no longer just about sharing — it is a hybrid system where community and commercial interests coexist, but not equally.
+        <span class="highlight">In short: Airbnb in NYC no longer looks like a platform built only around casual sharing. It now combines home-sharing with a clearly more business-driven segment.</span>
       </p>
+    </section>
+
+    <section class="section-card references">
+      <h2>References</h2>
+      <ul>
+        <li>
+          Inside Airbnb. <em>Data source for New York City Airbnb listings.</em>
+          <a href="https://insideairbnb.com/" target="_blank">https://insideairbnb.com/</a>
+        </li>
+        <li>
+          Airbnb. <em>Company background and original home-sharing narrative.</em>
+          <a href="https://news.airbnb.com/about-us/" target="_blank">https://news.airbnb.com/about-us/</a>
+        </li>
+        <li>
+          New York City Mayor’s Office of Special Enforcement. <em>Short-term rental registration rules.</em>
+          <a href="https://www.nyc.gov/site/specialenforcement/registration-law/registration-for-hosts.page" target="_blank">https://www.nyc.gov/site/specialenforcement/registration-law/registration-for-hosts.page</a>
+        </li>
+      </ul>
     </section>
 
     <section class="section-card">
       <h2>Behind the scenes</h2>
       <p>
-        The full explainer notebook contains the data cleaning, exploratory analysis, methodological choices,
-        and additional interpretation behind this project.
+        The full explainer notebook contains the data cleaning steps, exploratory analysis,
+        methodological choices, and additional plots behind this project.
       </p>
       <p>
         <a class="btn btn-primary" href="notebooks/02_analysis.ipynb" target="_blank">Open the explainer notebook</a>
